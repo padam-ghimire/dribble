@@ -2,8 +2,11 @@
 
 namespace App\Exceptions;
 
+use Exception;
+use App\Exceptions\ModelNotDefined;
+use Illuminate\Auth\Access\AuthorizationException;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
-use Throwable;
 
 class Handler extends ExceptionHandler
 {
@@ -29,12 +32,10 @@ class Handler extends ExceptionHandler
     /**
      * Report or log an exception.
      *
-     * @param  \Throwable  $exception
+     * @param  \Exception  $exception
      * @return void
-     *
-     * @throws \Exception
      */
-    public function report(Throwable $exception)
+    public function report(Exception $exception)
     {
         parent::report($exception);
     }
@@ -43,13 +44,34 @@ class Handler extends ExceptionHandler
      * Render an exception into an HTTP response.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Throwable  $exception
-     * @return \Symfony\Component\HttpFoundation\Response
-     *
-     * @throws \Throwable
+     * @param  \Exception  $exception
+     * @return \Illuminate\Http\Response
      */
-    public function render($request, Throwable $exception)
+    public function render($request, Exception $exception)
     {
+        if($exception instanceof AuthorizationException){
+            if($request->expectsJson()){
+                return response()->json(["errors" => [
+                    "message" => "You are not authorized to access this resource"
+                ]], 403);
+            }
+        }
+
+        if($exception instanceof ModelNotFoundException && $request->expectsJson()){
+            return response()->json(["errors" => [
+                "message" => "The resource was not found in the database"
+            ]], 404);
+        }
+
+        if($exception instanceof ModelNotDefined && $request->expectsJson()){
+            return response()->json(["errors" => [
+                "message" => "No model defined"
+            ]], 500);
+        }
+
+        
+
+
         return parent::render($request, $exception);
     }
 }

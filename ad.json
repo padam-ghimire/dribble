@@ -1,0 +1,880 @@
+{
+    "info": {
+        "_postman_id": "0a095195-a145-43eb-99ee-1b737747a9a6",
+        "name": "Classified Ads",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Auth",
+            "item": [
+                {
+                    "name": "Login Request",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "email",
+                                    "value": "test@test.com",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "12345678",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "name",
+                                    "value": "Raman",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "phone",
+                                    "value": "9869867227",
+                                    "type": "text",
+                                    "disabled": true
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/api/auth/login",
+                            "host": ["{{url}}"],
+                            "path": ["api", "auth", "login"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Signup Request",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "email",
+                                    "value": "test@test.com",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "password",
+                                    "value": "12345678",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "name",
+                                    "value": "Raman",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "phone",
+                                    "value": "9869867227",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/api/auth/signup",
+                            "host": ["{{url}}"],
+                            "path": ["api", "auth", "signup"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Logout",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9zaWdudXAiLCJpYXQiOjE1ODgxNjI1MTksImV4cCI6MTU4ODE2NjExOSwibmJmIjoxNTg4MTYyNTE5LCJqdGkiOiJORUNlUG93MGY4QlBxYzhLIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0._dnNo3wGuzEJcVg6Hj8d8ipdyYJ54DuQF5ZANiw5SKs",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/api/auth/logout",
+                            "host": ["{{url}}"],
+                            "path": ["api", "auth", "logout"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Me",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": ""
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "name": "Post",
+            "item": [
+                {
+                    "name": "Post Store Request",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9zaWdudXAiLCJpYXQiOjE1ODgxNjI1MTksImV4cCI6MTU4ODE2NjExOSwibmJmIjoxNTg4MTYyNTE5LCJqdGkiOiJORUNlUG93MGY4QlBxYzhLIiwic3ViIjoxLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIn0._dnNo3wGuzEJcVg6Hj8d8ipdyYJ54DuQF5ZANiw5SKs",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/x-www-form-urlencoded",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "",
+                                    "value": "",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "description",
+                                    "value": "dkn",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "title",
+                                    "value": "Iphone",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "price",
+                                    "value": "200000",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "exchange",
+                                    "value": "1",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "warranty",
+                                    "value": "2 months",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "home_delivery",
+                                    "value": "0",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "delivery_area",
+                                    "value": "All Nepal",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "delivery_charge",
+                                    "value": "10",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "category_id",
+                                    "value": "4",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "expire_date",
+                                    "value": "2020/5/11",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "image",
+                                    "type": "file",
+                                    "src": "/home/ramanic/Downloads/stock-vector-namaste-hands-forming-mountain-peak-zen-symbol-1499836502.jpg"
+                                },
+                                {
+                                    "key": "location",
+                                    "value": "Pokhara",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "",
+                                    "value": "",
+                                    "type": "text",
+                                    "disabled": true
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}api/post/store",
+                            "host": ["{{url}}api"],
+                            "path": ["post", "store"],
+                            "query": [
+                                {
+                                    "key": "",
+                                    "value": "",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "",
+                                    "value": "",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "",
+                                    "value": "",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Post Update Request",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU4Nzk3NzcwOSwiZXhwIjoxNTg3OTgxMzA5LCJuYmYiOjE1ODc5Nzc3MDksImp0aSI6Ik5meXhxZklmZ2p1R1BBb0EiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.9gQizA_Ly7Tmsb0OSe1P1-ziizw4mmTYQru1UvCyow8",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/x-www-form-urlencoded",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "",
+                                    "value": "",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "description",
+                                    "value": "This is sold test post",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "title",
+                                    "value": "Hello",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "price",
+                                    "value": "",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "exchange",
+                                    "value": "1",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "warranty",
+                                    "value": "2 months",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "home_delivery",
+                                    "value": "0",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "delivery_area",
+                                    "value": "All Nepal",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "delivery_charge",
+                                    "value": "10",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "category_id",
+                                    "value": "1",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "expire_date",
+                                    "value": "2020/5/11",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "image",
+                                    "type": "file",
+                                    "src": "/home/ramanic/Downloads/stock-vector-namaste-hands-forming-mountain-peak-zen-symbol-1499836502.jpg"
+                                },
+                                {
+                                    "key": "",
+                                    "value": "",
+                                    "type": "text",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "",
+                                    "value": "",
+                                    "type": "text",
+                                    "disabled": true
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/api/post/update/2",
+                            "host": ["{{url}}"],
+                            "path": ["api", "post", "update", "2"],
+                            "query": [
+                                {
+                                    "key": "",
+                                    "value": "",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "",
+                                    "value": "",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "",
+                                    "value": "",
+                                    "disabled": true
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "All Post View Request(Paginated)",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/x-www-form-urlencoded",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": []
+                        },
+                        "url": {
+                            "raw": "{{url}}/api/post",
+                            "host": ["{{url}}"],
+                            "path": ["api", "post"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Unsold A Product",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU4Nzk3NzcwOSwiZXhwIjoxNTg3OTgxMzA5LCJuYmYiOjE1ODc5Nzc3MDksImp0aSI6Ik5meXhxZklmZ2p1R1BBb0EiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.9gQizA_Ly7Tmsb0OSe1P1-ziizw4mmTYQru1UvCyow8",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/x-www-form-urlencoded",
+                                "type": "text"
+                            },
+                            {
+                                "key": "token",
+                                "value": "",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "token",
+                                    "value": "",
+                                    "type": "text",
+                                    "disabled": true
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/api/post/unsold/1",
+                            "host": ["{{url}}"],
+                            "path": ["api", "post", "unsold", "1"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Sold a Product",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU4Nzk3NzcwOSwiZXhwIjoxNTg3OTgxMzA5LCJuYmYiOjE1ODc5Nzc3MDksImp0aSI6Ik5meXhxZklmZ2p1R1BBb0EiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.9gQizA_Ly7Tmsb0OSe1P1-ziizw4mmTYQru1UvCyow8",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/x-www-form-urlencoded",
+                                "type": "text"
+                            },
+                            {
+                                "key": "token",
+                                "value": "",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "token",
+                                    "value": "",
+                                    "type": "text",
+                                    "disabled": true
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/api/post/sold/1",
+                            "host": ["{{url}}"],
+                            "path": ["api", "post", "sold", "1"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete a Product",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU4Nzk3NzcwOSwiZXhwIjoxNTg3OTgxMzA5LCJuYmYiOjE1ODc5Nzc3MDksImp0aSI6Ik5meXhxZklmZ2p1R1BBb0EiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.9gQizA_Ly7Tmsb0OSe1P1-ziizw4mmTYQru1UvCyow8",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/x-www-form-urlencoded",
+                                "type": "text"
+                            },
+                            {
+                                "key": "token",
+                                "value": "",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "token",
+                                    "value": "",
+                                    "type": "text",
+                                    "disabled": true
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "{{url}}/api/post/delete/1",
+                            "host": ["{{url}}"],
+                            "path": ["api", "post", "delete", "1"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Search",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/x-www-form-urlencoded",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": []
+                        },
+                        "url": {
+                            "raw": "{{url}}/api/post/search?category=4&price_min=20000&price_max=30000",
+                            "host": ["{{url}}"],
+                            "path": ["api", "post", "search"],
+                            "query": [
+                                {
+                                    "key": "location",
+                                    "value": "Pokhara",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "title",
+                                    "value": "",
+                                    "disabled": true
+                                },
+                                {
+                                    "key": "category",
+                                    "value": "4"
+                                },
+                                {
+                                    "key": "price_min",
+                                    "value": "20000"
+                                },
+                                {
+                                    "key": "price_max",
+                                    "value": "30000"
+                                }
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Post a Comment",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/x-www-form-urlencoded",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": []
+                        },
+                        "url": {
+                            "raw": "{{url}}/api/post/1/comment",
+                            "host": ["{{url}}"],
+                            "path": ["api", "post", "1", "comment"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Post Details",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/api/post/7",
+                            "host": ["{{url}}"],
+                            "path": ["api", "post", "7"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Post A Reply",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/api/comment/2/reply",
+                            "host": ["{{url}}"],
+                            "path": ["api", "comment", "2", "reply"]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "name": "User",
+            "item": [
+                {
+                    "name": "User Post (With/Without Token)",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU4Nzk3NzcwOSwiZXhwIjoxNTg3OTgxMzA5LCJuYmYiOjE1ODc5Nzc3MDksImp0aSI6Ik5meXhxZklmZ2p1R1BBb0EiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.9gQizA_Ly7Tmsb0OSe1P1-ziizw4mmTYQru1UvCyow8",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/api/user/1/posts",
+                            "host": ["{{url}}"],
+                            "path": ["api", "user", "1", "posts"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "User Profile View",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU4Nzk3NzcwOSwiZXhwIjoxNTg3OTgxMzA5LCJuYmYiOjE1ODc5Nzc3MDksImp0aSI6Ik5meXhxZklmZ2p1R1BBb0EiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.9gQizA_Ly7Tmsb0OSe1P1-ziizw4mmTYQru1UvCyow8",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/api/user/1/profile",
+                            "host": ["{{url}}"],
+                            "path": ["api", "user", "1", "profile"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Profile Update",
+                    "request": {
+                        "auth": {
+                            "type": "bearer",
+                            "bearer": [
+                                {
+                                    "key": "token",
+                                    "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU4Nzk3NzcwOSwiZXhwIjoxNTg3OTgxMzA5LCJuYmYiOjE1ODc5Nzc3MDksImp0aSI6Ik5meXhxZklmZ2p1R1BBb0EiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.9gQizA_Ly7Tmsb0OSe1P1-ziizw4mmTYQru1UvCyow8",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{url}}/api/user/1/posts",
+                            "host": ["{{url}}"],
+                            "path": ["api", "user", "1", "posts"]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        },
+        {
+            "name": "Categories",
+            "item": [
+                {
+                    "name": "All Category",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/x-www-form-urlencoded",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": []
+                        },
+                        "url": {
+                            "raw": "{{url}}/api/category",
+                            "host": ["{{url}}"],
+                            "path": ["api", "category"]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Featured Category",
+                    "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                    },
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Accept",
+                                "value": "application/json",
+                                "type": "text"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "name": "Content-Type",
+                                "value": "application/x-www-form-urlencoded",
+                                "type": "text"
+                            }
+                        ],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": []
+                        },
+                        "url": {
+                            "raw": "{{url}}api/category/feaured",
+                            "host": ["{{url}}api"],
+                            "path": ["category", "feaured"]
+                        }
+                    },
+                    "response": []
+                }
+            ],
+            "protocolProfileBehavior": {}
+        }
+    ],
+    "event": [
+        {
+            "listen": "prerequest",
+            "script": {
+                "id": "5eedba90-e904-47fc-9ec4-ab917b9448eb",
+                "type": "text/javascript",
+                "exec": [""]
+            }
+        },
+        {
+            "listen": "test",
+            "script": {
+                "id": "b76d58d6-5bce-41db-8e24-058b4918fadf",
+                "type": "text/javascript",
+                "exec": [""]
+            }
+        }
+    ],
+    "variable": [
+        {
+            "id": "0b34bd8c-39eb-4f3f-8bda-b89b1747a930",
+            "key": "url",
+            "value": "http://localhost:8000"
+        }
+    ],
+    "protocolProfileBehavior": {}
+}

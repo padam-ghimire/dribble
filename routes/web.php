@@ -1,22 +1,28 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
-Route::get('/', function () {
+Route::get('/', function (Request $request) {
+    // $query = (new \App\Models\Design)->newQuery();
+    // if ($request->q) {
+    //     $query->orWhere(function($q) use ($request){
+    //         $q->where('title', 'LIKE', '%'.$request->q.'%')
+    //             ->orWhere('description', 'LIKE', '%'.$request->q.'%');
+    //     });
+    // }
+    // $query->has('comments');
+    // $q->has('team');
+    // $q->withCount('likes')
+    //     ->orderByDesc('likes_count');
+    
+    
+    // get by tag
+    //$q->withAllTags('adobe-photoshop');
+    // dd($query->get());
+
+
+
+
     return view('welcome');
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
